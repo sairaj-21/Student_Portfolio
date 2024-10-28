@@ -183,13 +183,69 @@ section {
 }
 
 /* Footer */
+/* Footer */
 footer {
     background-color: #222;
-    color: #888;
-    padding: 1rem;
+    color: #ccc;
+    padding: 2rem 1rem;
     text-align: center;
     position: relative;
+    border-top: 3px solid var(--accent-color);
 }
+
+.footer-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+footer p {
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+    color: #888;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 0.5rem;
+}
+
+.social-links a {
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+
+.social-links a:hover {
+    transform: scale(1.2);
+}
+
+.social-icon {
+    width: 30px;
+    height: 30px;
+    filter: grayscale(100%);
+    transition: filter 0.3s ease;
+}
+
+.social-links a:hover .social-icon {
+    filter: grayscale(0%);
+    /* Add accent color hover for each icon */
+    filter: drop-shadow(0 0 5px var(--accent-color));
+}
+
+/* Footer Decoration */
+footer::before {
+    content: "";
+    position: absolute;
+    top: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 5px;
+    background: var(--accent-color);
+    border-radius: 5px;
+}
+
 
 footer p {
     margin-bottom: 0.5rem;
